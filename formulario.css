@@ -63,16 +63,18 @@ button#enviar-whatsapp:hover {
     .container {
         padding: 10px;
     }
-}
 
-/* Estilos específicos para dispositivos más grandes (PCs) */
-@media (min-width: 1024px) {
-    body {
+    label {
         font-size: 18px;
     }
 
-    .container {
-        max-width: 800px;
-        padding: 30px;
+    input,
+    select,
+    textarea {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 18px;
     }
 }
