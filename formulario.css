@@ -27,7 +27,7 @@ input,
 select,
 textarea,
 button {
-    width: 100%;
+    width: 60%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
