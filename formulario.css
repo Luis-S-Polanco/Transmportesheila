@@ -1,4 +1,4 @@
-/* Estilos generales de la página */
+/* Estilos generales comunes a todos los dispositivos */
 body {
     font-family: Arial, sans-serif;
     background-color: #f2f2f2;
@@ -34,7 +34,7 @@ button {
     border-radius: 3px;
 }
 
-/* Estilos para los botones de enviar */
+/* Estilos comunes para botones de envío */
 button {
     background-color: #007bff;
     color: #fff;
@@ -52,4 +52,27 @@ button#enviar-whatsapp {
 
 button#enviar-whatsapp:hover {
     background-color: #128c7e;
+}
+
+/* Estilos específicos para dispositivos más pequeños (teléfonos) */
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Estilos específicos para dispositivos más grandes (PCs) */
+@media (min-width: 1024px) {
+    body {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 800px;
+        padding: 30px;
+    }
 }
