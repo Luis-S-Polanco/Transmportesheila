@@ -84,12 +84,12 @@ function ajustarTamanio() {
 
     if (anchoVentana <= 600) {
         // Estilos para dispositivos pequeños (por ejemplo, teléfonos)
-        document.body.style.fontSize = '8px';
+        document.body.style.fontSize = '40%';
         document.querySelector('.container').style.maxWidth = '50%';
         document.querySelector('.container').style.padding = '50%';
     } else {
         // Estilos para dispositivos grandes (por ejemplo, PCs)
-        document.body.style.fontSize = '8px';
+        document.body.style.fontSize = '40%';
         document.querySelector('.container').style.maxWidth = '50%';
         document.querySelector('.container').style.padding = '50%';
     }
