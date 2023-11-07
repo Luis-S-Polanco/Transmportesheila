@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-    max-width: 50%;
+    max-width: 600px;
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
@@ -27,7 +27,7 @@ input,
 select,
 textarea,
 button {
-    width: 80%;
+    width: 100%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -61,7 +61,7 @@ button#enviar-whatsapp:hover {
     }
 
     .container {
-        padding: 100%;
+        padding: 10px;
     }
 
     label {
