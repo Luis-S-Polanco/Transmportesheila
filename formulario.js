@@ -90,7 +90,7 @@ function ajustarTamanio() {
     } else {
         // Estilos para dispositivos grandes (por ejemplo, PCs)
         document.body.style.fontSize = '20px';
-        document.querySelector('.container').style.maxWidth = '1000px';
+        document.querySelector('.container').style.maxWidth = '100px';
         document.querySelector('.container').style.padding = '30px';
     }
 }
