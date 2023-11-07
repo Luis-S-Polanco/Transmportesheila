@@ -86,12 +86,12 @@ function ajustarTamanio() {
         // Estilos para dispositivos pequeños (por ejemplo, teléfonos)
         document.body.style.fontSize = '8px';
         document.querySelector('.container').style.maxWidth = '100%';
-        document.querySelector('.container').style.padding = '100%';
+        document.querySelector('.container').style.padding = '50%';
     } else {
         // Estilos para dispositivos grandes (por ejemplo, PCs)
         document.body.style.fontSize = '8px';
         document.querySelector('.container').style.maxWidth = '100%';
-        document.querySelector('.container').style.padding = '100%';
+        document.querySelector('.container').style.padding = '50%';
     }
 }
 
