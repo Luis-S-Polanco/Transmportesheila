@@ -85,13 +85,13 @@ function ajustarTamanio() {
     if (anchoVentana <= 600) {
         // Estilos para dispositivos pequeños (por ejemplo, teléfonos)
         document.body.style.fontSize = '8px';
-        document.querySelector('.container').style.maxWidth = '10%';
-        document.querySelector('.container').style.padding = '10%';
+        document.querySelector('.container').style.maxWidth = '100%';
+        document.querySelector('.container').style.padding = '100%';
     } else {
         // Estilos para dispositivos grandes (por ejemplo, PCs)
         document.body.style.fontSize = '8px';
-        document.querySelector('.container').style.maxWidth = '10%';
-        document.querySelector('.container').style.padding = '10%';
+        document.querySelector('.container').style.maxWidth = '100%';
+        document.querySelector('.container').style.padding = '100%';
     }
 }
 
