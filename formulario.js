@@ -87,11 +87,6 @@ function ajustarTamanio() {
         document.body.style.fontSize = '16px';
         document.querySelector('.container').style.maxWidth = '600px';
         document.querySelector('.container').style.padding = '10px';
-    } else if (anchoVentana > 600 && anchoVentana < 1024) {
-        // Estilos para dispositivos medianos (por ejemplo, tabletas)
-        document.body.style.fontSize = '18px';
-        document.querySelector('.container').style.maxWidth = '800px';
-        document.querySelector('.container').style.padding = '20px';
     } else {
         // Estilos para dispositivos grandes (por ejemplo, PCs)
         document.body.style.fontSize = '20px';
@@ -103,3 +98,4 @@ function ajustarTamanio() {
 // Llama a la función para ajustar el tamaño cuando se carga la página y cuando se redimensiona la ventana.
 ajustarTamanio();
 window.addEventListener('resize', ajustarTamanio);
+
