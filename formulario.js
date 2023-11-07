@@ -99,3 +99,4 @@ function ajustarTamanio() {
 ajustarTamanio();
 window.addEventListener('resize', ajustarTamanio);
 
+
