@@ -1,94 +1,115 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>Formulario de Contacto</title>
     <link rel="stylesheet" type="text/css" href="formulario.css">
 </head>
+
 <body>
+    <!-- Contenedor principal -->
     <div class="container">
-        <h1>Formulario de Contacto</h1>
+        <h1><i class="fas fa-envelope"></i> Formulario de Contacto</h1> <!-- Agregado un icono -->
         <form id="contact-form">
-            <!-- Campos del solicitante -->
-            <label for="nombre_solicitante">Nombre del Solicitante:</label>
-            <input type="text" id="nombre_solicitante" name="nombre_solicitante" required>
+            <!-- Sección de Datos del Solicitante -->
+            <div class="form-section">
+                <h2>Datos del Solicitante</h2>
+                <label for="nombre_solicitante">Nombre del Solicitante:</label>
+                <input type="text" id="nombre_solicitante" name="nombre_solicitante" required>
 
-            <label for="apellido_solicitante">Apellido del Solicitante:</label>
-            <input type="text" id="apellido_solicitante" name="apellido_solicitante" required>
+                <label for="apellido_solicitante">Apellido del Solicitante:</label>
+                <input type="text" id="apellido_solicitante" name="apellido_solicitante" required>
 
-            <label for="correo_solicitante">Correo del Solicitante:</label>
-            <input type="email" id="correo_solicitante" name="correo_solicitante" required>
+                <label for="correo_solicitante">Correo del Solicitante:</label>
+                <input type="email" id="correo_solicitante" name="correo_solicitante" required>
 
-            <label for="cedula_solicitante">Cédula del Solicitante:</label>
-            <input type="text" id="cedula_solicitante" name="cedula_solicitante" required>
+                <label for="cedula_solicitante">RNC, Cédula y/o Pasaporte del solicitante:</label>
+                <input type="text" id="cedula_solicitante" name="cedula_solicitante" required>
+            </div>
 
-            <!-- Campos del pasajero -->
-            <label for="nombre_pasajero">Nombre del Pasajero:</label>
-            <input type="text" id ="nombre_pasajero" name="nombre_pasajero" required>
+            <!-- Sección de Datos del Pasajero -->
+            <div class="form-section">
+                <h2>Datos del Pasajero</h2>
+                <H4>Si va a agregar la información de más de un pasajero, indique la cantidad:</H4>
+                <label for="cantidad_pasajeros">Cantidad de Pasajeros:</label>
+                <input type="number" id="cantidad_pasajeros" name="cantidad_pasajeros" required>
 
-            <label for "telefono_pasajero">Teléfono del Pasajero:</label>
-            <input type="tel" id="telefono_pasajero" name="telefono_pasajero" required>
+                <!-- Div para la información de cada pasajero -->
+                <div id="pasajeros-info"></div>
+            </div>
 
-            <!-- Campos de fecha y hora -->
-            <label for="fecha_ida">Fecha de Ida:</label>
-            <input type="date" id="fecha_ida" name="fecha_ida" required>
+            <!-- Sección de Fecha y Hora -->
+            <div class="form-section">
+                <h2>Fecha y Hora</h2>
+                <label for="fecha_ida">Fecha de Ida:</label>
+                <input type="date" id="fecha_ida" name="fecha_ida" required>
 
-            <label for="hora_ida">Hora de Ida:</label>
-            <input type="time" id="hora_ida" name="hora_ida" required>
+                <label for="hora_ida">Hora de Ida (Formato 24h):</label>
+                <input type="time" id="hora_ida" name="hora_ida" required>
 
-            <label for="fecha_regreso">Fecha de Regreso:</label>
-            <input type="date" id="fecha_regreso" name="fecha_regreso">
+                <label for="fecha_regreso">Fecha de Regreso:</label>
+                <input type="date" id="fecha_regreso" name="fecha_regreso">
 
-            <label for="hora_regreso">Hora de Regreso:</label>
-            <input type="time" id="hora_regreso" name="hora_regreso">
+                <label for="hora_regreso">Hora de Regreso (Formato 24h):</label>
+                <input type="time" id="hora_regreso" name="hora_regreso">
+            </div>
 
-            <!-- Campos de dirección -->
-            <label for="lugar_recogida">Lugar de Recogida:</label>
-            <input type="text" id="lugar_recogida" name="lugar_recogida" required>
+            <!-- Sección de Dirección -->
+            <div class="form-section">
+                <h2>Dirección</h2>
+                <label for="lugar_recogida">Lugar de Recogida:</label>
+                <input type="text" id="lugar_recogida" name="lugar_recogida" required>
 
-            <label for="lugar_destino">Lugar de Destino:</label>
-            <input type="text" id="lugar_destino" name="lugar_destino" required>
+                <label for="lugar_destino">Lugar de Destino:</label>
+                <input type="text" id="lugar_destino" name="lugar_destino" required>
+            </div>
 
-            <!-- Campos de cantidad y número de vuelo -->
-            <label for="cantidad_personas">Cantidad de Personas:</label>
-            <input type="number" id="cantidad_personas" name="cantidad_personas" required>
+            <!-- Sección de Cantidad y Número de Vuelo -->
+            <div class="form-section">
+                <h2>Cantidad y Vuelo</h2>
+                <label for="cantidad_maletas">Cantidad de Maletas:</label>
+                <input type="number" id="cantidad_maletas" name="cantidad_maletas" required>
 
-            <label for="cantidad_maletas">Cantidad de Maletas:</label>
-            <input type="number" id="cantidad_maletas" name="cantidad_maletas" required>
+                <label for="cantidad_buses">Cantidad de Buses:</label>
+                <input type="number" id="cantidad_buses" name="cantidad_buses" required>
 
-            <label for="cantidad_buses">Cantidad de Buses:</label>
-            <input type="number" id="cantidad_buses" name="cantidad_buses" required>
+                <label for="numero_vuelo">Número de Vuelo (Si Aplica):</label>
+                <input type="text" id="numero_vuelo" name="numero_vuelo">
+            </div>
 
-            <label for="numero_vuelo">Número de Vuelo (Si Aplica):</label>
-            <input type="text" id="numero_vuelo" name="numero_vuelo">
+            <!-- Sección de Paradas y Tipo de Servicio -->
+            <div class="form-section">
+                <h2>Paradas y Tipo de Servicio</h2>
+                <label for="paradas">¿Paradas? ¿Dónde (dirección exacta)?:</label>
+                <textarea id="paradas" name="paradas" rows="4"></textarea>
 
-            <!-- Campos de paradas y tipo de servicio -->
-            <label for="paradas">¿Paradas? ¿Dónde (dirección exacta)?:</label>
-            <textarea id="paradas" name="paradas" rows="4"></textarea>
+                <label for="tipo_servicio">Tipo de Servicio:</label>
+                <select id="tipo_servicio" name="tipo_servicio">
+                    <option value="ida_vuelta">Ida y vuelta el mismo día</option>
+                    <option value="traslado">Traslado</option>
+                    <option value="a_disposicion">A disposición</option>
+                </select>
+            </div>
 
-            <label for="tipo_servicio">Tipo de Servicio:</label>
-            <select id="tipo_servicio" name="tipo_servicio">
-                <option value="ida_vuelta">Ida y vuelta el mismo día</option>
-                <option value="traslado">Traslado</option>
-                <option value="a_disposicion">A disposición</option>
-            </select>
-
-            <!-- Campos de método de pago -->
-            <label>Método de Pago que desea utilizar:</label>
-            <input type="radio" id="metodo_deposito" name="metodo_pago" value="Depósito y/o Transferencia" required>
-            <label for="metodo_deposito">Depósito y/o Transferencia</label>
-            <br>
-            <input type="radio" id="metodo_tarjeta" name="metodo_pago" value="Tarjeta de Débito/Crédito">
-            <label for="metodo_tarjeta">Tarjeta de Débito/Crédito</label>
-            <br>
-            <input type="radio" id="metodo_link" name="metodo_pago" value="Link de pago">
-            <label for="metodo_link">Link de pago</label>
-            <br>
+            <!-- Sección de Método de Pago -->
+            <div class="form-section">
+                <h2>Método de Pago</h2>
+                <label for="metodo_pago">Método de Pago que desea utilizar:</label>
+                <select id="metodo_pago" name="metodo_pago" required>
+                    <option value="Depósito y/o Transferencia">Depósito y/o Transferencia</option>
+                    <option value="Tarjeta de Débito/Crédito">Tarjeta de Débito/Crédito</option>
+                    <option value="Link de pago">Link de pago</option>
+                </select>
+            </div>
 
             <!-- Botones de envío por correo y WhatsApp -->
-            <button type="button" id="enviar-correo">Enviar por Correo</button>
-            <button type="button" id="enviar-whatsapp">Enviar por WhatsApp</button>
+            <div class="form-section button-section">
+                <button type="button" id="agregar-pasajeros" class="button">Agregar Pasajeros</button>
+                <button type="button" id="enviar-correo" class="button">Enviar por Correo</button>
+                <button type="button" id="enviar-whatsapp" class="button">Enviar por WhatsApp</button>
+            </div>
         </form>
     </div>
     <script src="formulario.js"></script>
 </body>
+
 </html>
