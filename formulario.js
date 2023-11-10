@@ -158,7 +158,7 @@ function enviarWhatsApp() {
     **Cantidad de Servicio**%0A
     Cantidad de Cotizaciones: ${cantidadServicio}`;
 
-    const numeroWhatsApp = "+1234567890";
+    const numeroWhatsApp = "+18296717978";
     window.open(`https://wa.me/${numeroWhatsApp}?text=${mensajeWhatsApp}`);
 }
 
