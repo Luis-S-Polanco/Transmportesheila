@@ -8,82 +8,168 @@
 <body>
     <!-- Contenedor principal -->
     <div class="container">
-        <h1><i class="fas fa-envelope"></i> Formulario de Contacto</h1> <!-- Agregado un icono -->
+
+        <div class="contenedor">
+            <img src="imagen/logo sheila.jpeg" alt="icono" id="icono">
+          </div>
+
+
+        <h1><i class="fas fa-envelope"></i> Formulario de reservaciones </h1> <!-- Agregado un icono -->
         <form id="contact-form">
+
+
+                <!-- Seccion para saber cuanta contizacion son -->
+                <div class="form-section">
+                    <label for="cantidad_cotizaciones">Cantidad de contizaciones:</label>
+                    <input type="number" id="cantidad_cotizaciones" name="cantidad_cotizaciones" required>
+            </div>
+
+            <div class="form-section button-section">
+                <button type="button" id="agregar-cotizaciones" class="button">Agregar  cotizaciones </button>
+               <br>
+           </div>
+
+           
             <!-- Sección de Datos del Solicitante -->
             <div class="form-section">
                 <h2>Datos del Solicitante</h2>
-                <label for="nombre_solicitante">Nombre del Solicitante:</label>
-                <input type="text" id="nombre_solicitante" name="nombre_solicitante" required>
+                <label for="nombre_solicitante">Nombre del Solicitante:</label> <span id="error-message-nombre_solicitante" class="error-message"></span>
+                <br>
+                <input type="text" id="nombre_solicitante" name="nombre_Solicitante" required>
+                
 
-                <label for="apellido_solicitante">Apellido del Solicitante:</label>
+                <label for="apellido_solicitante">Apellido del Solicitante:</label>   <span id="error-message-apellido_solicitante" class="error-message"></span>
+                <br>
                 <input type="text" id="apellido_solicitante" name="apellido_solicitante" required>
+                
 
-                <label for="correo_solicitante">Correo del Solicitante:</label>
+                <label for="correo_solicitante">Correo del Solicitante:</label>                 <span id="error-message-correo_solicitante" class="error-message"></span>
+                <br>
                 <input type="email" id="correo_solicitante" name="correo_solicitante" required>
+                
 
-                <label for="cedula_solicitante">RNC, Cédula y/o Pasaporte del solicitante:</label>
+
+                <label for="cedula_solicitante">RNC, Cédula y/o Pasaporte del solicitante:</label><span id="error-message-cedula_solicitante" class="error-message"> </span>
+                <br>
                 <input type="text" id="cedula_solicitante" name="cedula_solicitante" required>
+                
             </div>
 
             <!-- Sección de Datos del Pasajero -->
             <div class="form-section">
                 <h2>Datos del Pasajero</h2>
+                    <label for="cantidad_pasajeros">Cantidad Pasajeros:</label><span id="error-message-cantidad_pasajeros" class="error-message"> </span>
+                    <br>
+                    <input type="number" id="cantidad_pasajeros" name="cantidad_pasajeros" required>
+                   
                 <H4>Si va a agregar la información de más de un pasajero, indique la cantidad:</H4>
-                <label for="cantidad_pasajeros">Cantidad de Pasajeros:</label>
-                <input type="number" id="cantidad_pasajeros" name="cantidad_pasajeros" required>
+                <label for="cantidad_pasajeros_contacto">Cantidad de Contacto de  Pasajeros:</label>
+                <input type="number" id="cantidad_pasajeros_contacto" name="cantidad_pasajeros_contacto" required>
+               
+                <!-- Button para agregar mas de un pasajero-->
+                <div class="form-section button-section">
+                    <button type="button" id="agregar-pasajeros" class="button">Agregar Pasajeros</button>
+                    <br>
+                </div>
 
-                <!-- Div para la información de cada pasajero -->
-                <div id="pasajeros-info"></div>
+                <!--  la información de cada pasajero -->
+                <h4>Pasajero 1</h4>
+                    <div class = "form-section">
+                        <label for="nombre_pasajero">Nombre del Pasajero:</label>  <span id="error-message-nombre_pasajero" class="error-message"> </span>
+                        <br>
+                        <input type="text" id="nombre_pasajero" name="nombre_pasajero" required>
+                       
+
+                        <label for="telefono_pasajero">Teléfono del Pasajero:</label><span id="error-message-telefono_pasajero" class="error-message"> </span>
+                        <br>
+                        <input type="tel" id="telefono_pasajero" name="telefono_pasajero" required >`;
+                        
+
+                    </div>
+
+                  
+
+                
+
+                <!--  DIV Para agregar mas de una informacion de un pasajero  -->
+                   <div id="pasajeros-info">
+
+
+                    </div>
+                
             </div>
+                    
+
+       
 
             <!-- Sección de Fecha y Hora -->
             <div class="form-section">
                 <h2>Fecha y Hora</h2>
-                <label for="fecha_ida">Fecha de Ida:</label>
+                <label for="fecha_ida">Fecha de Ida:</label> <span id="error-message-fecha_ida" class="error-message"> </span>
+                <br>
                 <input type="date" id="fecha_ida" name="fecha_ida" required>
+                
 
-                <label for="hora_ida">Hora de Ida (Formato 24h):</label>
-                <input type="time" id="hora_ida" name="hora_ida" required>
+                <label for="hora_ida">Hora de Ida (Formato 24h):</label><span id="error-message-hora_ida" class="error-message"> </span>
+                <br>
+                <input type="time" id="hora_ida" name="hora_ida" required >
+                
 
                 <label for="fecha_regreso">Fecha de Regreso:</label>
                 <input type="date" id="fecha_regreso" name="fecha_regreso">
+                
 
                 <label for="hora_regreso">Hora de Regreso (Formato 24h):</label>
-                <input type="time" id="hora_regreso" name="hora_regreso">
+                <input type="time" id="hora_regreso" name="hora_regreso" required >
+                
             </div>
 
             <!-- Sección de Dirección -->
             <div class="form-section">
                 <h2>Dirección</h2>
-                <label for="lugar_recogida">Lugar de Recogida:</label>
+                <label for="lugar_recogida">Lugar de Recogida:</label>  <span id="error-message-lugar_recogida" class="error-message"> </span>
+                <br>
                 <input type="text" id="lugar_recogida" name="lugar_recogida" required>
+                <span id="error-message-lugar_recogida" class="error-message"> </span>
+                <br>
 
-                <label for="lugar_destino">Lugar de Destino:</label>
+                <label for="lugar_destino">Lugar de Destino:</label><span id="error-message-lugar_destino" class="error-message"> </span>
+                <br>
                 <input type="text" id="lugar_destino" name="lugar_destino" required>
+                
             </div>
 
-            <!-- Sección de Cantidad y Número de Vuelo -->
+            <!-- Sección de Cantidad  -->
             <div class="form-section">
-                <h2>Cantidad y Vuelo</h2>
+                <h2>Cantidades de maletas y Autobuses  </h2>
                 <label for="cantidad_maletas">Cantidad de Maletas:</label>
                 <input type="number" id="cantidad_maletas" name="cantidad_maletas" required>
+                
 
                 <label for="cantidad_buses">Cantidad de Buses:</label>
                 <input type="number" id="cantidad_buses" name="cantidad_buses" required>
-
+            
+              
+            </div>
+          <!-- Sección Numero de vuelo  -->
+            <div class="form-section">
+                <h2>Numero de  Vuelo </h2>
+            
                 <label for="numero_vuelo">Número de Vuelo (Si Aplica):</label>
                 <input type="text" id="numero_vuelo" name="numero_vuelo">
+
             </div>
 
             <!-- Sección de Paradas y Tipo de Servicio -->
             <div class="form-section">
                 <h2>Paradas y Tipo de Servicio</h2>
-                <label for="paradas">¿Paradas? ¿Dónde (dirección exacta)?:</label>
+                <label for="paradas">Seccion de comentario ¿Paradas? ¿Dónde (dirección exacta)?:</label>
                 <textarea id="paradas" name="paradas" rows="4"></textarea>
 
-                <label for="tipo_servicio">Tipo de Servicio:</label>
+                <label for="tipo_servicio">Tipo de Servicio:</label> <span id="error-message-tipo_servicio" class="error-message"> </span>
+                <br>
                 <select id="tipo_servicio" name="tipo_servicio">
+                    <option value="vacio"> </option>
                     <option value="ida_vuelta">Ida y vuelta el mismo día</option>
                     <option value="traslado">Traslado</option>
                     <option value="a_disposicion">A disposición</option>
@@ -99,16 +185,26 @@
                     <option value="Tarjeta de Débito/Crédito">Tarjeta de Débito/Crédito</option>
                     <option value="Link de pago">Link de pago</option>
                 </select>
-            </div>
+            </div>      
+            
+            <br>
+
+                                <!--  DIV Para agregar mas de una cotizacion   -->
+                <div id="cotizacion-mas">
+
+
+                </div>
 
             <!-- Botones de envío por correo y WhatsApp -->
             <div class="form-section button-section">
-                <button type="button" id="agregar-pasajeros" class="button">Agregar Pasajeros</button>
-                <button type="button" id="enviar-correo" class="button">Enviar por Correo</button>
-                <button type="button" id="enviar-whatsapp" class="button">Enviar por WhatsApp</button>
+                
+                <button type="button" onclick="validarCampos()" id="enviar-correo" class="button">Enviar por Correo</button>
+                <button type="button" onclick="validarCampos()" id="enviar-whatsapp" class="button"> Enviar por WhatsApp</button> 
             </div>
         </form>
     </div>
+
+    
     <script src="formulario.js"></script>
 </body>
 
