@@ -3,7 +3,7 @@ function mostrarOcultarCampos() {
     var seccionRegreso = document.getElementById("seccion_regreso");
 
     // Si el tipo de servicio es "traslado", oculta la sección de Fecha y Hora de Regreso
-    if (tipoServicio === "traslado") {
+    if (tipoServicio === "traslado" || tipoServicio === "vacio") {
         seccionRegreso.style.display = "none";
     } else {
         seccionRegreso.style.display = "block";
