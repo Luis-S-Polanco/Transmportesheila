@@ -96,12 +96,16 @@
                     <br>
                     <input type="time" id="hora_ida" name="hora_ida" required>
 
-                    <label for="fecha_regreso">Fecha de Regreso:</label>
-                    <input type="date" id="fecha_regreso" name="fecha_regreso">
-
-                    <label for="hora_regreso">Hora de Regreso (Formato 24h):</label>
-                    <input type="time" id="hora_regreso" name="hora_regreso" required>
+                
                 </div>
+
+                <div id="seccion_regreso" style="display:none;">
+        <label for="fecha_regreso">Fecha de Regreso:</label>
+        <input type="date" id="fecha_regreso" name="fecha_regreso">
+
+        <label for="hora_regreso">Hora de Regreso (Formato 24h):</label>
+        <input type="time" id="hora_regreso" name="hora_regreso" required>
+    </div>
 
                 <!-- Sección de Dirección -->
                 <div class="form-section">
@@ -119,14 +123,14 @@
 
                 <!-- Sección de Paradas y Tipo de Servicio -->
                 <div class="form-section">
-                    <h2>Paradas </h2>
+                
                     <label for="paradas">Seccion de comentario ¿Paradas? ¿Dónde (dirección exacta)?:</label>
                     <textarea id="paradas" name="paradas" rows="4"></textarea>
                 </div>
 
                 <!-- Sección de Cantidad -->
                 <div class="form-section">
-                    <h2>Cantidades de maletas y Autobuses </h2>
+                    <h2>Cantidades de Maletas y Autobuses </h2>
                     <label for="cantidad_maletas">Cantidad de Maletas:</label>
                     <input type="number" id="cantidad_maletas" name="cantidad_maletas" required>
 
