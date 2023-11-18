@@ -187,7 +187,7 @@ const metodoPago = document.getElementById("metodo_pago").value;
     
 
     const mensajeCodificado = encodeURIComponent(mensaje);
-    const enlaceCorreo = `mailto:reservas@trasnportesheila.com?subject=Solicitud de Reservación&body=${mensajeCodificado}`;
+    const enlaceCorreo = `mailto:reservas@transportesheila.com?subject=Solicitud de Reservación&body=${mensajeCodificado}`;
 
     // Abrir el cliente de correo con el mensaje prellenado
     window.location.href = enlaceCorreo;
