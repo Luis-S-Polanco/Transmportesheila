@@ -1,3 +1,5 @@
+
+
 // validad lo campo en blanco que debe esta lleno
 
 function validarCampos() {
@@ -172,3 +174,7 @@ const metodoPago = document.getElementById("metodo_pago").value;
     // Abrir el cliente de correo con el mensaje prellenado
     window.location.href = enlaceCorreo;
 });
+
+
+
+
