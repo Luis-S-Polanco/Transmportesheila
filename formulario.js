@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function validarCampos() {
-    const campos = ["nombre_solicitante", "apellido_solicitante", "correo_solicitante", "cedula_solicitante", "cantidad_pasajeros", "telefono_pasajero", "nombre_pasajero", "fecha_ida", "hora_ida", "lugar_recogida", "lugar_destino", "tipo_servicio", "metodo_pago"];
+    const campos = ["nombre_solicitante", , "correo_solicitante", "cedula_solicitante", "cantidad_pasajeros", "telefono_pasajero", "nombre_pasajero", "fecha_ida", "hora_ida", "lugar_recogida", "lugar_destino", "tipo_servicio", "metodo_pago"];
     let hayError = false;
     let primerCampoVacio;
 
@@ -95,7 +95,7 @@ document.getElementById("enviar-correo").addEventListener("click", function () {
 
   // Obtener valores del Solicitante
 const nombreSolicitante = document.getElementById("nombre_solicitante").value;
-const apellidoSolicitante = document.getElementById("apellido_solicitante").value;
+
 const correoSolicitante = document.getElementById("correo_solicitante").value;
 const cedulaSolicitante = document.getElementById("cedula_solicitante").value;
 
@@ -143,7 +143,7 @@ const metodoPago = document.getElementById("metodo_pago").value;
     
     `Datos del Solicitante
     Nombre del Solicitante: ${nombreSolicitante}
-    Apellido del Solicitante: ${apellidoSolicitante}
+   
     Correo del Solicitante: ${correoSolicitante}
     RNC, Cédula y/o Pasaporte del Solicitante: ${cedulaSolicitante}
     
@@ -258,7 +258,7 @@ const metodoPago = document.getElementById("metodo_pago").value;
     `Datos del Solicitante%0A
     %0A
     Nombre del Solicitante: ${nombreSolicitante}%0A
-    Apellido del Solicitante: ${apellidoSolicitante}%0A
+    
     Correo del Solicitante: ${correoSolicitante}%0A
     RNC, Cédula y/o Pasaporte del Solicitante: ${cedulaSolicitante}%0A
     
