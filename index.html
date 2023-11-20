@@ -19,17 +19,14 @@
 
         
             
-
-            <!-- Sección de Datos del Solicitante -->
+<!-- Sección de Datos del Solicitante -->
             <div class="form-section">
                 <h2>Datos del Solicitante</h2>
-                <label for="nombre_solicitante">Nombre del Solicitante:</label> <span id="error-message-nombre_solicitante" class="error-message"></span>
+                <label for="nombre_solicitante">Nombre  del Solicitante o Empresa :</label> <span id="error-message-nombre_solicitante" class="error-message"></span>
                 <br>
                 <input type="text" id="nombre_solicitante" name="nombre_solicitante" required>
 
-                <label for="apellido_solicitante">Apellido del Solicitante:</label> <span id="error-message-apellido_solicitante" class="error-message"></span>
-                <br>
-                <input type="text" id="apellido_solicitante" name="apellido_solicitante" required>
+                
 
                 <label for="correo_solicitante">Correo del Solicitante:</label> <span id="error-message-correo_solicitante" class="error-message"></span>
                 <br>
@@ -42,33 +39,26 @@
             </div>
 
             <!-- Sección de Datos del Pasajero -->
-            <div class="form-section">
-                <h2>Datos del Pasajero</h2>
-                <label for="cantidad_pasajeros">Cantidad Pasajeros:</label><span id="error-message-cantidad_pasajeros" class="error-message"> </span>
-                <br>
-                <input type="number" id="cantidad_pasajeros" name="cantidad_pasajeros" required>
-
-               
-               
+           
+            <h2>Nombre de un Pasajero o Representante</h2>
                 <!-- la información de cada pasajero -->
                 <h4>Pasajero 1*</h4>
                 <div class="form-section">
-                    <label for="nombre_pasajero">Nombre del Pasajero:</label> <span id="error-message-nombre_pasajero" class="error-message"> </span>
+                    <label for="nombre_pasajero">Nombre del Pasajero o Representante:</label> <span id="error-message-nombre_pasajero" class="error-message"> </span>
                     <br>
                     <input type="text" id="nombre_pasajero" name="nombre_pasajero" required>
 
-                    <label for="telefono_pasajero">Teléfono del Pasajero:</label><span id="error-message-telefono_pasajero" class="error-message"> </span>
+                    <label for="telefono_pasajero">Contato de un Pasajero o Representante:</label><span id="error-message-telefono_pasajero" class="error-message"> </span>
                     <br>
                     <input type="tel" id="telefono_pasajero" name="telefono_pasajero" required>
                 </div>
 
                 <h4>Pasajero 2</h4>
                 <div class="form-section">
-                    <label for="nombre_pasajero2">Nombre del Pasajero:</label> <span id="error-message-nombre_pasajero2" class="error-message"> </span>
-                    <br>
+                    <label for="nombre_pasajero2">Nombre del Pasajero o Representante:</label> 
                     <input type="text" id="nombre_pasajero2" name="nombre_pasajero2" required>
 
-                    <label for="telefono_pasajero2">Teléfono del Pasajero:</label><span id="error-message-telefono_pasajero2" class="error-message"> </span>
+                    <label for="telefono_pasajero2">Contato de un Pasajero o Representante:</label><span id="error-message-telefono_pasajero2" class="error-message"> </span>
                     <br>
                     <input type="tel2" id="telefono_pasajero2" name="telefono_pasajero2" required>
                 </div>
@@ -80,7 +70,7 @@
                 <label for="tipo_servicio">Tipo de Servicio:</label><span id="error-message-tipo_servicio" class="error-message"></span>
                 <select id="tipo_servicio" name="tipo_servicio" required>
                     <option value="vacio">Seleccione un Tipo de Servicio </option>
-                    <option value="ida_vuelta">Ida y vuelta el mismo día</option>
+                    <option value="ida_vuelta">Ida y vuelta (el mismo día)</option>
                     <option value="traslado">Traslado</option>
                     <option value="a_disposicion">A disposición</option>
                 </select>
@@ -110,13 +100,13 @@
                 <!-- Sección de Dirección -->
                 <div class="form-section">
                     <h2>Dirección</h2>
-                    <label for="lugar_recogida">Lugar de Recogida:</label> <span id="error-message-lugar_recogida" class="error-message"> </span>
+                    <label for="lugar_recogida">Lugar de Recogida *:</label> <span id="error-message-lugar_recogida" class="error-message"> </span>
                     <br>
                     <input type="text" id="lugar_recogida" name="lugar_recogida" required>
                     <span id="error-message-lugar_recogida" class="error-message"> </span>
                     <br>
 
-                    <label for="lugar_destino">Lugar de Destino:</label><span id="error-message-lugar_destino" class="error-message"> </span>
+                    <label for="lugar_destino">Lugar de Destino *:</label><span id="error-message-lugar_destino" class="error-message"> </span>
                     <br>
                     <input type="text" id="lugar_destino" name="lugar_destino" required>
                 </div>
@@ -145,7 +135,13 @@
                     <input type="text" id="numero_vuelo" name="numero_vuelo">
                 </div>
 
-               
+                <div class="form-section">
+                   
+                    <label for="cantidad_pasajeros">Cantidad Pasajeros:</label><span id="error-message-cantidad_pasajeros" class="error-message"> </span>
+                    <br>
+                    <input type="number" id="cantidad_pasajeros" name="cantidad_pasajeros" required>
+    
+                </div> 
 
                 <!-- Sección de Método de Pago -->
                 <div class="form-section">
