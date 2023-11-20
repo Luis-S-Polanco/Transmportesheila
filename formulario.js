@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function validarCampos() {
-    const campos = ["nombre_solicitante", , "correo_solicitante", "cedula_solicitante", "cantidad_pasajeros", "telefono_pasajero", "nombre_pasajero", "fecha_ida", "hora_ida", "lugar_recogida", "lugar_destino", "tipo_servicio", "metodo_pago"];
+    const campos = ["nombre_solicitante",  "correo_solicitante", "cedula_solicitante", "cantidad_pasajeros", "telefono_pasajero", "nombre_pasajero", "fecha_ida", "hora_ida", "lugar_recogida", "lugar_destino", "tipo_servicio", "metodo_pago"];
     let hayError = false;
     let primerCampoVacio;
 
@@ -204,7 +204,7 @@ document.getElementById("enviar-whatsapp").addEventListener("click", function ()
         return;
     }
 
-    // Construir el mensaje con los datos del formulario
+  // Construir el mensaje con los datos del formulario
     let mensaje = "";
 
   // Obtener valores del Solicitante
@@ -258,7 +258,7 @@ const metodoPago = document.getElementById("metodo_pago").value;
     `Datos del Solicitante%0A
     %0A
     Nombre del Solicitante: ${nombreSolicitante}%0A
-    
+  
     Correo del Solicitante: ${correoSolicitante}%0A
     RNC, Cédula y/o Pasaporte del Solicitante: ${cedulaSolicitante}%0A
     
@@ -296,9 +296,6 @@ const metodoPago = document.getElementById("metodo_pago").value;
 
 
     `;
-
-
-        
 
     
     const mensajeCodificado = encodeURIComponent(mensaje);
