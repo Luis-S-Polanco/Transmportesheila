@@ -209,7 +209,7 @@ document.getElementById("enviar-whatsapp").addEventListener("click", function ()
 
   // Obtener valores del Solicitante
 const nombreSolicitante = document.getElementById("nombre_solicitante").value;
-const apellidoSolicitante = document.getElementById("apellido_solicitante").value;
+
 const correoSolicitante = document.getElementById("correo_solicitante").value;
 const cedulaSolicitante = document.getElementById("cedula_solicitante").value;
 
