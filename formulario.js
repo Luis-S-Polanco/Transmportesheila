@@ -1,3 +1,13 @@
+
+function abrirVentanaEmergente(event) {
+    event.preventDefault();
+    // URL de los términos y condiciones
+    var urlTerminos = 'terminos_y_condiciones.html';
+
+    // Abre una nueva ventana emergente
+    window.open(urlTerminos, '_blank', 'width=600,height=600');
+}
+
 function mostrarOcultarCampos() {
     var tipoServicio = document.getElementById("tipo_servicio").value;
     var seccionRegreso = document.getElementById("seccion_regreso");
@@ -21,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 function validarCampos() {
-    const campos = ["nombre_solicitante",  "correo_solicitante", "cedula_solicitante", "cantidad_pasajeros", "telefono_pasajero", "nombre_pasajero", "fecha_ida", "hora_ida", "lugar_recogida", "lugar_destino", "tipo_servicio", "metodo_pago"];
+    const campos = ["nombre_solicitante", "contacto_solicitante",  "correo_solicitante", "cedula_solicitante", "cantidad_pasajeros", "telefono_pasajero", "nombre_pasajero", "fecha_ida", "hora_ida", "lugar_recogida", "lugar_destino", "tipo_servicio", "metodo_pago","cantidad_maletas"];
     let hayError = false;
     let primerCampoVacio;
 
@@ -79,230 +89,250 @@ function validarCampos() {
 }
 
 
-
-
-
-
-
-document.getElementById("enviar-correo").addEventListener("click", function () {
-    // Validar los campos antes de enviar el correo
-    if (!validarCampos()) {
-        return;
-    }
-
-    // Construir el mensaje con los datos del formulario
-    let mensaje = "";
-
-  // Obtener valores del Solicitante
-const nombreSolicitante = document.getElementById("nombre_solicitante").value;
-
-const correoSolicitante = document.getElementById("correo_solicitante").value;
-const cedulaSolicitante = document.getElementById("cedula_solicitante").value;
-
-// Obtener valores de la Cantidad de Pasajeros
-const cantidadPasajeros = document.getElementById("cantidad_pasajeros").value;
-
-// Obtener valores del Pasajero 1
-const nombrePasajero1 = document.getElementById("nombre_pasajero").value;
-const telefonoPasajero1 = document.getElementById("telefono_pasajero").value;
-
-// Obtener valores del Pasajero 2
-const nombrePasajero2 = document.getElementById("nombre_pasajero2").value;
-const telefonoPasajero2 = document.getElementById("telefono_pasajero2").value;
-
-// Obtener valores del Tipo de Servicio
-const tipoServicio = document.getElementById("tipo_servicio").value;
-
-// Obtener valores de la Fecha y Hora
-const fechaIda = document.getElementById("fecha_ida").value;
-const horaIda = document.getElementById("hora_ida").value;
-const fechaRegreso = document.getElementById("fecha_regreso").value;
-const horaRegreso = document.getElementById("hora_regreso").value;
-
-// Obtener valores de la Dirección
-const lugarRecogida = document.getElementById("lugar_recogida").value;
-const lugarDestino = document.getElementById("lugar_destino").value;
-
-// Obtener valores de las Paradas
-const paradas = document.getElementById("paradas").value;
-
-// Obtener valores de la Cantidad de Maletas y Autobuses
-const cantidadMaletas = document.getElementById("cantidad_maletas").value;
-const cantidadBuses = document.getElementById("cantidad_buses").value;
-
-// Obtener valor del Número de Vuelo
-const numeroVuelo = document.getElementById("numero_vuelo").value;
-
-// Obtener valor del Método de Pago
-const metodoPago = document.getElementById("metodo_pago").value;
-
-
-
-    // Construir el mensaje con los datos recopilados
-    mensaje += 
-    
-    `Datos del Solicitante
-    Nombre del Solicitante: ${nombreSolicitante}
-   
-    Correo del Solicitante: ${correoSolicitante}
-    RNC, Cédula y/o Pasaporte del Solicitante: ${cedulaSolicitante}
-    
-    Datos del Pasajero
-    Cantidad de Pasajeros: ${cantidadPasajeros}
-    
-    Pasajero 1:
-    Nombre del Pasajero: ${nombrePasajero1}
-    Teléfono del Pasajero: ${telefonoPasajero1}
-
-    Pasajero 2:
-    Nombre del Pasajero 2: ${nombrePasajero2}
-    Teléfono del Pasajero 2: ${telefonoPasajero2}
-
-    
-    Tipo de Servicio: ${tipoServicio}
-
-    Fecha de Ida: ${fechaIda}
-    Hora de Ida: ${horaIda}
-
-    Fecha de Regreso: ${fechaRegreso}
-    Hora de Regreso: ${horaRegreso}
-
-    Lugar de Recogida: ${lugarRecogida}
-    Lugar de Destino: ${lugarDestino}
-
-    Paradas: ${paradas}
-
-    Cantidad de Maletas: ${cantidadMaletas}
-    Cantidad de Buses: ${cantidadBuses}
-    Número de Vuelo: ${numeroVuelo}
-
-    Método de Pago: ${metodoPago}
-
-
-    `;
+function verificarAceptacionInicio() {
+    if (document.getElementById('aceptoCheckboxinicio').checked) {
+        alert('Gracias por aceptar los términos y condiciones.');
+        // Puedes realizar acciones adicionales aquí si es necesario
+        document.getElementById("enviar-correo").addEventListener("click", function () {
+            // Validar los campos antes de enviar el correo
+            if (!validarCampos()) {
+                return;
+            }
+        
+            // Construir el mensaje con los datos del formulario
+            let mensaje = "";
+        
+          // Obtener valores del Solicitante
+        const nombreSolicitante = document.getElementById("nombre_solicitante").value;
+        const  contactosolicitante = document.getElementById("contacto_solicitante").value;
+        
+        const correoSolicitante = document.getElementById("correo_solicitante").value;
+        const cedulaSolicitante = document.getElementById("cedula_solicitante").value;
+        
+        // Obtener valores de la Cantidad de Pasajeros
+        const cantidadPasajeros = document.getElementById("cantidad_pasajeros").value;
+        
+        // Obtener valores del Pasajero 1
+        const nombrePasajero1 = document.getElementById("nombre_pasajero").value;
+        const telefonoPasajero1 = document.getElementById("telefono_pasajero").value;
+        
+        // Obtener valores del Pasajero 2
+        const nombrePasajero2 = document.getElementById("nombre_pasajero2").value;
+        const telefonoPasajero2 = document.getElementById("telefono_pasajero2").value;
+        
+        // Obtener valores del Tipo de Servicio
+        const tipoServicio = document.getElementById("tipo_servicio").value;
+        
+        // Obtener valores de la Fecha y Hora
+        const fechaIda = document.getElementById("fecha_ida").value;
+        const horaIda = document.getElementById("hora_ida").value;
+        const fechaRegreso = document.getElementById("fecha_regreso").value;
+        const horaRegreso = document.getElementById("hora_regreso").value;
+        
+        // Obtener valores de la Dirección
+        const lugarRecogida = document.getElementById("lugar_recogida").value;
+        const lugarDestino = document.getElementById("lugar_destino").value;
+        
+        // Obtener valores de las Paradas
+        const paradas = document.getElementById("paradas").value;
+        
+        // Obtener valores de la Cantidad de Maletas y Autobuses
+        const cantidadMaletas = document.getElementById("cantidad_maletas").value;
+        const cantidadBuses = document.getElementById("cantidad_buses").value;
+        
+        // Obtener valor del Número de Vuelo
+        const numeroVuelo = document.getElementById("numero_vuelo").value;
+        
+        // Obtener valor del Método de Pago
+        const metodoPago = document.getElementById("metodo_pago").value;
+        
+        
+        
+            // Construir el mensaje con los datos recopilados
+            mensaje += 
+            
+            `Datos del Solicitante
+            Nombre del Solicitante: ${nombreSolicitante}
+            Contacto Solicitante :   ${contactosolicitante }   
+           
+            Correo del Solicitante: ${correoSolicitante}
+            RNC, Cédula y/o Pasaporte del Solicitante: ${cedulaSolicitante}
+            
+            Datos del Pasajero
+            Cantidad de Pasajeros: ${cantidadPasajeros}
+            
+            Pasajero 1:
+            Nombre del Pasajero: ${nombrePasajero1}
+            Teléfono del Pasajero: ${telefonoPasajero1}
+        
+            Pasajero 2:
+            Nombre del Pasajero 2: ${nombrePasajero2}
+            Teléfono del Pasajero 2: ${telefonoPasajero2}
+        
+            
+            Tipo de Servicio: ${tipoServicio}
+        
+            Fecha de Ida: ${fechaIda}
+            Hora de Ida: ${horaIda}
+        
+            Fecha de Regreso: ${fechaRegreso}
+            Hora de Regreso: ${horaRegreso}
+        
+            Lugar de Recogida: ${lugarRecogida}
+            Lugar de Destino: ${lugarDestino}
+        
+            Paradas: ${paradas}
+        
+            Cantidad de Maletas: ${cantidadMaletas}
+            Cantidad de Buses: ${cantidadBuses}
+            Número de Vuelo: ${numeroVuelo}
+        
+            Método de Pago: ${metodoPago}
+        
+        
+            `;
+        
+        
+                
+        
+            
+        
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            const enlaceCorreo = `mailto:reservas@transportesheila.com?subject=Solicitud de Reservación&body=${mensajeCodificado}`;
+        
+            // Abrir el cliente de correo con el mensaje prellenado
+            window.location.href = enlaceCorreo;
+        
+        
+        
+        
+            
+        });
+        
+        document.getElementById("enviar-whatsapp").addEventListener("click", function () {
+            // Validar los campos antes de enviar AL WHASA
+            if (!validarCampos()) {
+                return;
+            }
+        
+          // Construir el mensaje con los datos del formulario
+            let mensaje = "";
+        
+          // Obtener valores del Solicitante
+        const nombreSolicitante = document.getElementById("nombre_solicitante").value;
+        const  contactosolicitante = document.getElementById("contacto_solicitante").value;
+        
+        const correoSolicitante = document.getElementById("correo_solicitante").value;
+        const cedulaSolicitante = document.getElementById("cedula_solicitante").value;
+        
+        // Obtener valores de la Cantidad de Pasajeros
+        const cantidadPasajeros = document.getElementById("cantidad_pasajeros").value;
+        
+        // Obtener valores del Pasajero 1
+        const nombrePasajero1 = document.getElementById("nombre_pasajero").value;
+        const telefonoPasajero1 = document.getElementById("telefono_pasajero").value;
+        
+        // Obtener valores del Pasajero 2
+        const nombrePasajero2 = document.getElementById("nombre_pasajero2").value;
+        const telefonoPasajero2 = document.getElementById("telefono_pasajero2").value;
+        
+        // Obtener valores del Tipo de Servicio
+        const tipoServicio = document.getElementById("tipo_servicio").value;
+        
+        // Obtener valores de la Fecha y Hora
+        const fechaIda = document.getElementById("fecha_ida").value;
+        const horaIda = document.getElementById("hora_ida").value;
+        const fechaRegreso = document.getElementById("fecha_regreso").value;
+        const horaRegreso = document.getElementById("hora_regreso").value;
+        
+        // Obtener valores de la Dirección
+        const lugarRecogida = document.getElementById("lugar_recogida").value;
+        const lugarDestino = document.getElementById("lugar_destino").value;
+        
+        // Obtener valores de las Paradas
+        const paradas = document.getElementById("paradas").value;
+        
+        // Obtener valores de la Cantidad de Maletas y Autobuses
+        const cantidadMaletas = document.getElementById("cantidad_maletas").value;
+        const cantidadBuses = document.getElementById("cantidad_buses").value;
+        
+        // Obtener valor del Número de Vuelo
+        const numeroVuelo = document.getElementById("numero_vuelo").value;
+        
+        // Obtener valor del Método de Pago
+        const metodoPago = document.getElementById("metodo_pago").value;
+        
+        
+        
+            // Construir el mensaje con los datos recopilados
+            mensaje += 
+            
+            `Datos del Solicitante%0A
+            %0A
+            Nombre del Solicitante: ${nombreSolicitante}%0A
+            Contacto Solicitante :   ${contactosolicitante } %0A
+          
+            Correo del Solicitante: ${correoSolicitante}%0A
+            RNC, Cédula y/o Pasaporte del Solicitante: ${cedulaSolicitante}%0A
+            
+            Datos del Pasajero%0A
+            %0A
+            Cantidad de Pasajeros: ${cantidadPasajeros}%0A
+            %0A
+            Pasajero 1:%0A
+            Nombre del Pasajero: ${nombrePasajero1}%0A
+            Teléfono del Pasajero: ${telefonoPasajero1}%0A
+            %0A
+            Pasajero 2:%0A
+            Nombre del Pasajero 2: ${nombrePasajero2}%0A
+            Teléfono del Pasajero 2: ${telefonoPasajero2}%0A
+            %0A
+            Tipo de Servicio: ${tipoServicio}%0A
+            %0A
+            Fecha de Ida: ${fechaIda}%0A
+            Hora de Ida: ${horaIda}%0A
+            %0A
+            Fecha de Regreso: ${fechaRegreso}%0A
+            Hora de Regreso: ${horaRegreso}%0A
+        
+            Lugar de Recogida: ${lugarRecogida}%0A
+            Lugar de Destino: ${lugarDestino}%0A
+            %0A
+        
+            Paradas o comentario : ${paradas}%0A
+            %0A
+            Cantidad de Maletas: ${cantidadMaletas}%0A
+            Cantidad de Buses: ${cantidadBuses}%0A
+            Número de Vuelo: ${numeroVuelo}%0A
+            %0A
+            Método de Pago: ${metodoPago}%0A
+        
+        
+            `;
+        
+            
+            const mensajeCodificado = encodeURIComponent(mensaje);
+            const numeroWhatsApp = "+18493142007"; // Reemplaza con el número de destino real
+            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`);
+        
+        
+        
+        
+        });
 
 
         
-
-    
-
-    const mensajeCodificado = encodeURIComponent(mensaje);
-    const enlaceCorreo = `mailto:reservas@transportesheila.com?subject=Solicitud de Reservación&body=${mensajeCodificado}`;
-
-    // Abrir el cliente de correo con el mensaje prellenado
-    window.location.href = enlaceCorreo;
-
-
-
-
-    
-});
-
-document.getElementById("enviar-whatsapp").addEventListener("click", function () {
-    // Validar los campos antes de enviar AL WHASA
-    if (!validarCampos()) {
+    } else {
+        alert('Debes aceptar los términos y condiciones para continuar.');
         return;
     }
 
-  // Construir el mensaje con los datos del formulario
-    let mensaje = "";
-
-  // Obtener valores del Solicitante
-const nombreSolicitante = document.getElementById("nombre_solicitante").value;
-
-const correoSolicitante = document.getElementById("correo_solicitante").value;
-const cedulaSolicitante = document.getElementById("cedula_solicitante").value;
-
-// Obtener valores de la Cantidad de Pasajeros
-const cantidadPasajeros = document.getElementById("cantidad_pasajeros").value;
-
-// Obtener valores del Pasajero 1
-const nombrePasajero1 = document.getElementById("nombre_pasajero").value;
-const telefonoPasajero1 = document.getElementById("telefono_pasajero").value;
-
-// Obtener valores del Pasajero 2
-const nombrePasajero2 = document.getElementById("nombre_pasajero2").value;
-const telefonoPasajero2 = document.getElementById("telefono_pasajero2").value;
-
-// Obtener valores del Tipo de Servicio
-const tipoServicio = document.getElementById("tipo_servicio").value;
-
-// Obtener valores de la Fecha y Hora
-const fechaIda = document.getElementById("fecha_ida").value;
-const horaIda = document.getElementById("hora_ida").value;
-const fechaRegreso = document.getElementById("fecha_regreso").value;
-const horaRegreso = document.getElementById("hora_regreso").value;
-
-// Obtener valores de la Dirección
-const lugarRecogida = document.getElementById("lugar_recogida").value;
-const lugarDestino = document.getElementById("lugar_destino").value;
-
-// Obtener valores de las Paradas
-const paradas = document.getElementById("paradas").value;
-
-// Obtener valores de la Cantidad de Maletas y Autobuses
-const cantidadMaletas = document.getElementById("cantidad_maletas").value;
-const cantidadBuses = document.getElementById("cantidad_buses").value;
-
-// Obtener valor del Número de Vuelo
-const numeroVuelo = document.getElementById("numero_vuelo").value;
-
-// Obtener valor del Método de Pago
-const metodoPago = document.getElementById("metodo_pago").value;
 
 
-
-    // Construir el mensaje con los datos recopilados
-    mensaje += 
-    
-    `Datos del Solicitante%0A
-    %0A
-    Nombre del Solicitante: ${nombreSolicitante}%0A
-  
-    Correo del Solicitante: ${correoSolicitante}%0A
-    RNC, Cédula y/o Pasaporte del Solicitante: ${cedulaSolicitante}%0A
-    
-    Datos del Pasajero%0A
-    %0A
-    Cantidad de Pasajeros: ${cantidadPasajeros}%0A
-    %0A
-    Pasajero 1:%0A
-    Nombre del Pasajero: ${nombrePasajero1}%0A
-    Teléfono del Pasajero: ${telefonoPasajero1}%0A
-    %0A
-    Pasajero 2:%0A
-    Nombre del Pasajero 2: ${nombrePasajero2}%0A
-    Teléfono del Pasajero 2: ${telefonoPasajero2}%0A
-    %0A
-    Tipo de Servicio: ${tipoServicio}%0A
-    %0A
-    Fecha de Ida: ${fechaIda}%0A
-    Hora de Ida: ${horaIda}%0A
-    %0A
-    Fecha de Regreso: ${fechaRegreso}%0A
-    Hora de Regreso: ${horaRegreso}%0A
-
-    Lugar de Recogida: ${lugarRecogida}%0A
-    Lugar de Destino: ${lugarDestino}%0A
-    %0A
-
-    Paradas o comentario : ${paradas}%0A
-    %0A
-    Cantidad de Maletas: ${cantidadMaletas}%0A
-    Cantidad de Buses: ${cantidadBuses}%0A
-    Número de Vuelo: ${numeroVuelo}%0A
-    %0A
-    Método de Pago: ${metodoPago}%0A
-
-
-    `;
 
     
-    const mensajeCodificado = encodeURIComponent(mensaje);
-    const numeroWhatsApp = "+18493142007"; // Reemplaza con el número de destino real
-    window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`);
+}
 
 
 
 
-});
