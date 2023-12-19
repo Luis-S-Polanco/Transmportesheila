@@ -101,4 +101,68 @@ textarea {
         transform: translate(-50%, -50%);
       }
       
+
+
+
+
+
+
+
+
+
+
+   /* styles.css */
+/* styles.css */
+
+/* styles.css */
+
+h6 {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+h6 label {
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    margin-bottom: 0; /* Evita que la etiqueta h6 afecte el margen inferior del label */
+}
+
+
+
+
+form {
+    margin-top: 20px;
+}
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+.checkbox-container p {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-container label {
+    margin-left: 5px;
+}
+
 }
