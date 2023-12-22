@@ -1,338 +1,272 @@
+<!DOCTYPE html>
+<html>
 
-function abrirVentanaEmergente(event) {
-    event.preventDefault();
-    // URL de los términos y condiciones
-    var urlTerminos = 'terminos_y_condiciones.html';
+<head>
+    <link rel="stylesheet" type="text/css" href="formulario.css">
+</head>
 
-    // Abre una nueva ventana emergente
-    window.open(urlTerminos, '_blank', 'width=600,height=600');
-}
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
 
-function mostrarOcultarCampos() {
-    var tipoServicio = document.getElementById("tipo_servicio").value;
-    var seccionRegreso = document.getElementById("seccion_regreso");
+        <div class="contenedor">
+            <img src="imagen/logo sheila.jpeg" alt="icono" id="icono">
+        </div>
 
-    // Si el tipo de servicio es "traslado", oculta la sección de Fecha y Hora de Regreso
-    if (tipoServicio === "traslado" || tipoServicio === "vacio") {
-        seccionRegreso.style.display = "none";
-    } else {
-        seccionRegreso.style.display = "block";
-    }
-}
+        <h4><i class="fas fa-envelope"></i> Estimado cliente, favor llenar la plantilla para completar su reservación.  </h4>
+        <!-- Agregado un icono -->
+        <form id="contact-form">
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Obtén una referencia al elemento de tipo de servicio
-    var tipoServicioSelect = document.getElementById("tipo_servicio");
-
-    // Agrega un escucha de eventos al cambio en el tipo de servicio
-    tipoServicioSelect.addEventListener("change", mostrarOcultarCampos);
-});
-// validad lo campo en blanco que debe esta lleno
-
-
-function validarCampos() {
-    const campos = ["nombre_solicitante", "contacto_solicitante",  "correo_solicitante", "cedula_solicitante", "cantidad_pasajeros", "telefono_pasajero", "nombre_pasajero", "fecha_ida", "hora_ida", "lugar_recogida", "lugar_destino", "tipo_servicio", "metodo_pago","cantidad_maletas"];
-    let hayError = false;
-    let primerCampoVacio;
-
-    campos.forEach(campo => {
-        const valorCampo = document.getElementById(campo).value;
-        const mensajeErrorElement = document.getElementById(`error-message-${campo}`);
-
-        if (valorCampo.trim() === "") {
-            const campoNombre = campo.replace('_', ' ');
-            mensajeErrorElement.textContent = `*Favor de llenar el campo '${campoNombre.charAt(0).toUpperCase() + campoNombre.slice(1)}'.`;
-            mensajeErrorElement.style.display = "inline";
-            hayError = true;
-
-            if (!primerCampoVacio) {
-                primerCampoVacio = campo;
-            }
-        } else {
-            mensajeErrorElement.textContent = "";
-            mensajeErrorElement.style.display = "none";
-        }
-    });
-
-    const tipoServicio = document.getElementById("tipo_servicio").value;
-    const mensajeErrorTipoServicio = document.getElementById("error-message-tipo_servicio");
-
-    if (tipoServicio === "vacio") {
-        mensajeErrorTipoServicio.textContent = "*Favor de seleccionar un tipo de servicio.";
-        mensajeErrorTipoServicio.style.display = "inline";
-        hayError = true;
-    } else {
-        mensajeErrorTipoServicio.textContent = "";
-        mensajeErrorTipoServicio.style.display = "none";
-    }
-
-    const metodoPago = document.getElementById("metodo_pago").value;
-    const mensajeErrorMetodoPago = document.getElementById("error-message-metodo_pago");
-
-    if (metodoPago === "vacio") {
-        mensajeErrorMetodoPago.textContent = "*Favor de seleccionar un método de pago.";
-        mensajeErrorMetodoPago.style.display = "inline";
-        hayError = true;
-    } else {
-        mensajeErrorMetodoPago.textContent = "";
-        mensajeErrorMetodoPago.style.display = "none";
-    }
-
-    if (hayError) {
-        if (primerCampoVacio) {
-            document.getElementById(primerCampoVacio).focus();
-        }
-        return false;
-    } else {
-        return true;
-    }
-}
-
-
-function verificarAceptacionInicio() {
-    if (document.getElementById('aceptoCheckboxinicio').checked) {
-        alert('Gracias por aceptar los términos y condiciones.');
-        // Puedes realizar acciones adicionales aquí si es necesario
-        document.getElementById("enviar-correo").addEventListener("click", function () {
-            // Validar los campos antes de enviar el correo
-            if (!validarCampos()) {
-                return;
-            }
-        
-            // Construir el mensaje con los datos del formulario
-            let mensaje = "";
-        
-          // Obtener valores del Solicitante
-        const nombreSolicitante = document.getElementById("nombre_solicitante").value;
-        const  contactosolicitante = document.getElementById("contacto_solicitante").value;
-        
-        const correoSolicitante = document.getElementById("correo_solicitante").value;
-        const cedulaSolicitante = document.getElementById("cedula_solicitante").value;
-        
-        // Obtener valores de la Cantidad de Pasajeros
-        const cantidadPasajeros = document.getElementById("cantidad_pasajeros").value;
-        
-        // Obtener valores del Pasajero 1
-        const nombrePasajero1 = document.getElementById("nombre_pasajero").value;
-        const telefonoPasajero1 = document.getElementById("telefono_pasajero").value;
-        
-        // Obtener valores del Pasajero 2
-        const nombrePasajero2 = document.getElementById("nombre_pasajero2").value;
-        const telefonoPasajero2 = document.getElementById("telefono_pasajero2").value;
-        
-        // Obtener valores del Tipo de Servicio
-        const tipoServicio = document.getElementById("tipo_servicio").value;
-        
-        // Obtener valores de la Fecha y Hora
-        const fechaIda = document.getElementById("fecha_ida").value;
-        const horaIda = document.getElementById("hora_ida").value;
-        const fechaRegreso = document.getElementById("fecha_regreso").value;
-        const horaRegreso = document.getElementById("hora_regreso").value;
-        
-        // Obtener valores de la Dirección
-        const lugarRecogida = document.getElementById("lugar_recogida").value;
-        const lugarDestino = document.getElementById("lugar_destino").value;
-        
-        // Obtener valores de las Paradas
-        const paradas = document.getElementById("paradas").value;
-        
-        // Obtener valores de la Cantidad de Maletas y Autobuses
-        const cantidadMaletas = document.getElementById("cantidad_maletas").value;
-        const cantidadBuses = document.getElementById("cantidad_buses").value;
-        
-        // Obtener valor del Número de Vuelo
-        const numeroVuelo = document.getElementById("numero_vuelo").value;
-        
-        // Obtener valor del Método de Pago
-        const metodoPago = document.getElementById("metodo_pago").value;
-        
-        
-        
-            // Construir el mensaje con los datos recopilados
-            mensaje += 
-            
-            `Datos del Solicitante
-            Nombre del Solicitante: ${nombreSolicitante}
-            Contacto Solicitante :   ${contactosolicitante }   
-           
-            Correo del Solicitante: ${correoSolicitante}
-            RNC, Cédula y/o Pasaporte del Solicitante: ${cedulaSolicitante}
-            
-            Datos del Pasajero
-            Cantidad de Pasajeros: ${cantidadPasajeros}
-            
-            Pasajero 1:
-            Nombre del Pasajero: ${nombrePasajero1}
-            Teléfono del Pasajero: ${telefonoPasajero1}
-        
-            Pasajero 2:
-            Nombre del Pasajero 2: ${nombrePasajero2}
-            Teléfono del Pasajero 2: ${telefonoPasajero2}
         
             
-            Tipo de Servicio: ${tipoServicio}
-        
-            Fecha de Ida: ${fechaIda}
-            Hora de Ida: ${horaIda}
-        
-            Fecha de Regreso: ${fechaRegreso}
-            Hora de Regreso: ${horaRegreso}
-        
-            Lugar de Recogida: ${lugarRecogida}
-            Lugar de Destino: ${lugarDestino}
-        
-            Paradas: ${paradas}
-        
-            Cantidad de Maletas: ${cantidadMaletas}
-            Cantidad de Buses: ${cantidadBuses}
-            Número de Vuelo: ${numeroVuelo}
-        
-            Método de Pago: ${metodoPago}
-        
-        
-            `;
-        
-        
+                <!-- Sección de Datos del Solicitante -->
+            <div class="form-section">
                 
-        
-            
-        
-            const mensajeCodificado = encodeURIComponent(mensaje);
-            const enlaceCorreo = `mailto:reservas@transportesheila.com?subject=Solicitud de Reservación&body=${mensajeCodificado}`;
-        
-            // Abrir el cliente de correo con el mensaje prellenado
-            window.location.href = enlaceCorreo;
-        
-        
-        
-        
-            
-        });
-        
-        document.getElementById("enviar-whatsapp").addEventListener("click", function () {
-            // Validar los campos antes de enviar AL WHASA
-            if (!validarCampos()) {
-                return;
-            }
-        
-          // Construir el mensaje con los datos del formulario
-            let mensaje = "";
-        
-          // Obtener valores del Solicitante
-        const nombreSolicitante = document.getElementById("nombre_solicitante").value;
-        const  contactosolicitante = document.getElementById("contacto_solicitante").value;
-        
-        const correoSolicitante = document.getElementById("correo_solicitante").value;
-        const cedulaSolicitante = document.getElementById("cedula_solicitante").value;
-        
-        // Obtener valores de la Cantidad de Pasajeros
-        const cantidadPasajeros = document.getElementById("cantidad_pasajeros").value;
-        
-        // Obtener valores del Pasajero 1
-        const nombrePasajero1 = document.getElementById("nombre_pasajero").value;
-        const telefonoPasajero1 = document.getElementById("telefono_pasajero").value;
-        
-        // Obtener valores del Pasajero 2
-        const nombrePasajero2 = document.getElementById("nombre_pasajero2").value;
-        const telefonoPasajero2 = document.getElementById("telefono_pasajero2").value;
-        
-        // Obtener valores del Tipo de Servicio
-        const tipoServicio = document.getElementById("tipo_servicio").value;
-        
-        // Obtener valores de la Fecha y Hora
-        const fechaIda = document.getElementById("fecha_ida").value;
-        const horaIda = document.getElementById("hora_ida").value;
-        const fechaRegreso = document.getElementById("fecha_regreso").value;
-        const horaRegreso = document.getElementById("hora_regreso").value;
-        
-        // Obtener valores de la Dirección
-        const lugarRecogida = document.getElementById("lugar_recogida").value;
-        const lugarDestino = document.getElementById("lugar_destino").value;
-        
-        // Obtener valores de las Paradas
-        const paradas = document.getElementById("paradas").value;
-        
-        // Obtener valores de la Cantidad de Maletas y Autobuses
-        const cantidadMaletas = document.getElementById("cantidad_maletas").value;
-        const cantidadBuses = document.getElementById("cantidad_buses").value;
-        
-        // Obtener valor del Número de Vuelo
-        const numeroVuelo = document.getElementById("numero_vuelo").value;
-        
-        // Obtener valor del Método de Pago
-        const metodoPago = document.getElementById("metodo_pago").value;
-        
-        
-        
-            // Construir el mensaje con los datos recopilados
-            mensaje += 
-            
-            `Datos del Solicitante%0A
-            %0A
-            Nombre del Solicitante: ${nombreSolicitante}%0A
-            Contacto Solicitante :   ${contactosolicitante } %0A
-          
-            Correo del Solicitante: ${correoSolicitante}%0A
-            RNC, Cédula y/o Pasaporte del Solicitante: ${cedulaSolicitante}%0A
-            
-            Datos del Pasajero%0A
-            %0A
-            Cantidad de Pasajeros: ${cantidadPasajeros}%0A
-            %0A
-            Pasajero 1:%0A
-            Nombre del Pasajero: ${nombrePasajero1}%0A
-            Teléfono del Pasajero: ${telefonoPasajero1}%0A
-            %0A
-            Pasajero 2:%0A
-            Nombre del Pasajero 2: ${nombrePasajero2}%0A
-            Teléfono del Pasajero 2: ${telefonoPasajero2}%0A
-            %0A
-            Tipo de Servicio: ${tipoServicio}%0A
-            %0A
-            Fecha de Ida: ${fechaIda}%0A
-            Hora de Ida: ${horaIda}%0A
-            %0A
-            Fecha de Regreso: ${fechaRegreso}%0A
-            Hora de Regreso: ${horaRegreso}%0A
-        
-            Lugar de Recogida: ${lugarRecogida}%0A
-            Lugar de Destino: ${lugarDestino}%0A
-            %0A
-        
-            Paradas o comentario : ${paradas}%0A
-            %0A
-            Cantidad de Maletas: ${cantidadMaletas}%0A
-            Cantidad de Buses: ${cantidadBuses}%0A
-            Número de Vuelo: ${numeroVuelo}%0A
-            %0A
-            Método de Pago: ${metodoPago}%0A
-        
-        
-            `;
-        
-            
-            const mensajeCodificado = encodeURIComponent(mensaje);
-            const numeroWhatsApp = "+18493142007"; // Reemplaza con el número de destino real
-            window.open(`https://wa.me/${numeroWhatsApp}?text=${mensaje}`);
-        
-        
-        
-        
-        });
+                <label for="nombre_solicitante">Nombre  del solicitante :</label> <span id="error-message-nombre_solicitante" class="error-message"></span>
+                <br>
+                <input type="text" id="nombre_solicitante" name="nombre_solicitante" required>
+            </div>
 
 
-        
-    } else {
-        alert('Debes aceptar los términos y condiciones para continuar.');
-        return;
-    }
+            <!-- Contacto del solicitante -->  
+
+                <label for="contacto_solicitante">Contacto del solicitante:</label><span id="error-message-contacto_solicitante" class="error-message"> </span>
+                <br>
+                <input type="tel" id="contacto_solicitante" name="contacto_solicitante" required>
+
+                <!-- agregar al Jc esto -->
+                  
+                <label for="correo_solicitante">Correo del solicitante:</label> <span id="error-message-correo_solicitante" class="error-message"></span>
+                <br>
+                <input type="email" id="correo_solicitante" name="correo_solicitante" required>
+
+
+                <!-- Sección de Tipo de documento -->
+            <div class="form-section">
+                
+                <label for="tipo_documento">Tipo de documento:</label><span id="error-message-tipo_documento" class="error-message"></span>
+                <select id="tipo_documento" name="tipo_documento" required>
+                    <option value="vacio">Seleccione un tipo de documento </option>
+                    <option value="RNC">RNC</option>
+                    <option value="cedula">Cédula</option>
+                    <option value="pasaporte">Pasaporte del solicitante</option>
+                </select>
+
+
+            </div>
+                
+                <!-- Agregar Jc-->
+                
+                <label for="informacion_documento">  Redactar documento:</label><span id="error-message-informacion_documento" class="error-message"> </span>
+                <br>
+                <input type="number" id="informacion_documento" name="informacion_documento" required>
 
 
 
+                  <!-- Agregar Jc-->
+
+                <label for="nombre_empresa">Nombre de la empresa  :</label> 
+                <br>
+                <input type="text" id="nombre_empresa" name="nombre_empresa" required>
+
+                  
+            
+
+            
+                <!-- la información de cada pasajero -->
+                
+                <div class="form-section">
+                    <label for="nombre_pasajero">Nombre del pasajero :</label> <span id="error-message-nombre_pasajero" class="error-message"> </span>
+                    <br>
+                    <input type="text" id="nombre_pasajero" name="nombre_pasajero" required>
+
+                    <label for="telefono_pasajero">Contacto  del  pasajero:</label><span id="error-message-telefono_pasajero" class="error-message"> </span>
+                    <br>
+                    <input type="tel" id="telefono_pasajero" name="telefono_pasajero" required>
+                </div>
+
+                
+                <div class="form-section">
+                    <label for="nombre_pasajero2">Nombre del representante:</label> 
+                    <input type="text" id="nombre_pasajero2" name="nombre_pasajero2" required>
+
+                    <label for="telefono_pasajero2">Contacto del  representante:</label><span id="error-message-telefono_pasajero2" class="error-message"> </span>
+                    <br>
+                    <input type="tel2" id="telefono_pasajero2" name="telefono_pasajero2" required>
+                </div>
+
+               
+            <!-- Sección de Tipo de Servicio -->
+                <div class="form-section">
+                    
+                    <label for="tipo_servicio">Tipo de servicio:</label><span id="error-message-tipo_servicio" class="error-message"></span>
+                    <select id="tipo_servicio" name="tipo_servicio" required>
+                        <option value="vacio">Seleccione un tipo de servicio </option>
+                        <option value="ida_vuelta">Ida y vuelta (el mismo día)</option>
+                        <option value="traslado">Traslado</option>
+                        <option value="a_disposicion">A disposición</option>
+                    </select>
+                </div>
+
+                <!-- Sección de Fecha y Hora -->
+                <div class="form-section">
+                   
+                    <label for="fecha_del_servicio"> Fecha del servicio :</label> <span id="error-message-fecha_del_servicio" class="error-message"> </span>
+                    <br>
+                    <input type="date" id="fecha_del_servicio" name="fecha_del_servicio" required>
+
+                    <label for="hora_ida">Hora del servicio :</label><span id="error-message-hora_ida" class="error-message"> </span>
+                    <br>
+                    <input type="time" id="hora_ida" name="hora_ida" required>
+
+                
+                </div>
+
+                <div id="seccion_regreso" style="display:none;">
+                    <label for="fecha_regreso">Fecha de regreso:</label>
+                    <input type="date" id="fecha_regreso" name="fecha_regreso">
+
+                    <label for="hora_regreso">Hora de regreso :</label>
+                    <input type="time" id="hora_regreso" name="hora_regreso" required>
+                </div>
+
+                <!-- Sección de Dirección -->
+                <div class="form-section">
+                   
+                    <label for="lugar_recogida">Lugar de recogida :</label> <span id="error-message-lugar_recogida" class="error-message"> </span>
+                    <br>
+                    <input type="text" id="lugar_recogida" name="lugar_recogida" required>
+                    <span id="error-message-lugar_recogida" class="error-message"> </span>
+                    <br>
+
+                    <label for="lugar_destino">Lugar de destino :</label><span id="error-message-lugar_destino" class="error-message"> </span>
+                    <br>
+                    <input type="text" id="lugar_destino" name="lugar_destino" required>
+                </div>
+
+                <!-- Tiene parada  -->
+                <div class="form-section">
+                    
+                    <label for="requiere_paradas">¿Requiere paradas?:</label>  <span id="error-message-requiere_paradas" class="error-message"> </span>
+                    <select id="requiere_paradas" name="requiere_paradas" required>
+                        <option value="vacio">Seleccione si requiere alguna paradas </option>
+                        <option value="si_parada">Si</option>
+                        <option value="no_parada">No</option>
+                          
+                    </select>
+                </div>
+                <br>
+
+
+
+
+
+                <!-- Sección de Paradas  -->
+                <div id="seccion_paradas" style="display:none;">
+                
+                    <label for="paradas">Seccion de comentariós, paradas dirección exacta:</label> <span id="error-message-paradas" class="error-message"> </span>
+                    <textarea id="paradas" name="paradas" rows="4"></textarea>
+                </div>
+
+                <!-- Sección de Cantidad -->
+                <div class="form-section">
+                    
+                    <label for="cantidad_maletas">Cantidad de maletas:</label> <span id="error-message-cantidad_maletas" class="error-message"> </span>
+                    <input type="number" id="cantidad_maletas" name="cantidad_maletas" required>
+
+                    <label for="cantidad_buses">Cantidad de buses:</label>
+                    <input type="number" id="cantidad_buses" name="cantidad_buses" required>
+                </div>
+
+                <!-- Sección Numero de vuelo -->
+                <div class="form-section">
+                   
+                    <label for="numero_vuelo">Número de vuelo (si aplica):</label>
+                    <input type="text" id="numero_vuelo" name="numero_vuelo">
+                </div>
+                        <!-- Sección de Datos del Pasajero -->
+
+
+                <div class="form-section">
+                   
+                   <!-- Sección de Datos del Pasajero -->
+
+                        <label for="cantidad_pasajeros">Cantidad de pasajeros  :</label>  <span id="error-message-cantidad_pasajeros" class="error-message"> </span>
+                            <br>
+                         <input type="number" id="cantidad_pasajeros" name="cantidad_pasajeros" required>
+            
+                </div> 
+
+                
+                <br>
+
+                
+
+                        <!-- Sección de Método de Pago -->
+                        <div class="form-section">
+                                     
+                            <label for="metodo_pago">Método de pago que desea utilizar:</label> <span id="error-message-metodo_pago" class="error-message"></span>
+                            <select id="metodo_pago" name="metodo_pago" required>
+                                <option value="vacio">Seleccione un método de pago</option>
+                                <option value="Depósito y/o Transferencia">Depósito y/o transferencia</option>
+                                <option value="Tarjeta de Débito/Crédito">Tarjeta de débito/crédito </option>
+                                <option value="Link de pago "> Link de pago</option>
+                            </select>
+                        </div>
+
+                        <!-- Sección de Método de comprobante  -->
+                            <!-- falta el codigo de js  -->
+
+
+
+                        <!-- Sección de Recepción de factura   -->
+                            <!-- falta el codigo de js  -->
+                            <div class="form-section">
+                                                
+                                <label for="recepción_factura">Recepción de factura  :</label> <span id="error-message-recepción_factura" class="error-message"></span>
+                                <select id="recepción_factura" name="recepción_factura" required>
+                                    <option value="vacio">Seleccione un tipo de recepción de factura</option>
+                                    <option value="Correo electrónico">Correo electrónico </option>
+                                    <option value="Física"> Física </option>
+                                    <option value="WhatsApp"> WhatsApp </option>
+                                </select>
+                            </div>
+
+
+
+                    <label for="comentario_recepción de factura "> Recepción de factura  comentario   </label>
+                    <textarea id="comentario_recepción de factura " name="comentario_recepción de factura " rows="4"></textarea>
+
+
+                    <h5></h5>
+                    <h6>
+
+                        <span><a href="terminos_y_condiciones.html" onclick="abrirVentanaEmergente(event)">Términos y Condiciones</a></span>
+                        <span><label for="aceptoCheckboxinicio">Acepto los términos y condiciones</label></span>
+                        <span><input type="checkbox" id="aceptoCheckboxinicio"></span>
+                    </h6>
+                    
+
+                        <!-- Botones de envío por correo y WhatsApp -->
+                        <div class="form-section button-section">
+                            <button type="button" onclick="validarCampos(), verificarAceptacionInicio()" id="enviar-correo" class="button">Enviar por Correo</button>
+                            <button type="button" onclick="validarCampos(), verificarAceptacionInicio()"  id="enviar-whatsapp" class="button">Enviar por WhatsApp</button>
+                        </div>
+
+
+
+
+        </form>   
+            
+</div>   <!-- Contenedor principal -->  
+
+                        
+            
+        
+
+    <script src="formulario.js"></script>
 
     
-}
+</body>
 
-
-
-
+</html>
