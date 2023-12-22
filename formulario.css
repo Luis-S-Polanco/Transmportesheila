@@ -59,6 +59,56 @@ textarea {
     background-color: #128c7e;
 }
 
+
+
+input[type="submit"] {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+
+
+/* termino y condiciones*/
+h6 {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+   
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+label {
+    margin-left: 10px;
+}
+
+
+/* Asegúrate de que los elementos estén en línea */
+span {
+    display: inline-block;
+    margin-right: 10px; /* Puedes ajustar este valor según sea necesario */
+}
+
+/* Alinea verticalmente el checkbox con el texto */
+label {
+    vertical-align: middle;
+}
+
+/* termino y condiciones*/
+
 /* Estilos específicos para dispositivos más pequeños (teléfonos) */
 @media (max-width: 600px) {
     body {
@@ -104,65 +154,30 @@ textarea {
 
 
 
+      input[type="submit"] {
+        background-color: #007BFF;
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #0056b3;
+    }
+    
+    
+    
+    
+    
+      
+
+        form {
+            margin-top: 20px;
+        }
 
 
-
-
-
-
-
-   /* styles.css */
-/* styles.css */
-
-/* styles.css */
-
-h6 {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-h6 label {
-    margin-right: 10px;
-    text-decoration: none;
-    color: #fff;
-    margin-bottom: 0; /* Evita que la etiqueta h6 afecte el margen inferior del label */
-}
-
-
-
-
-form {
-    margin-top: 20px;
-}
-
-input[type="submit"] {
-    background-color: #007BFF;
-    color: #fff;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-input[type="submit"]:hover {
-    background-color: #0056b3;
-}
-
-
-
-.checkbox-container p {
-    display: flex;
-    align-items: center;
-}
-
-.checkbox-container label {
-    margin-left: 5px;
-}
 
 }
