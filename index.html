@@ -10,10 +10,10 @@
     <div class="container">
 
         <div class="contenedor">
-            <img src="logo sheila.jpeg" alt="icono" id="icono">
+            <img src="imagen/logo sheila.jpeg" alt="icono" id="icono">
         </div>
 
-       <h4><i class="fas fa-envelope"></i> Estimado cliente, favor llenar la plantilla para completar su reservación.  </h4>
+        <h4><i class="fas fa-envelope"></i> Estimado cliente, favor llenar la plantilla para completar su reservación.  </h4>
         <!-- Agregado un icono -->
         <form id="contact-form">
 
@@ -115,9 +115,9 @@
                     <br>
                     <input type="date" id="fecha_del_servicio" name="fecha_del_servicio" required>
 
-                    <label for="hora_ida">Hora del servicio :</label><span id="error-message-hora_ida" class="error-message"> </span>
+                    <label for="Hora_del_servicio">Hora del servicio :</label><span id="error-message-Hora_del_servicio" class="error-message"> </span>
                     <br>
-                    <input type="time" id="hora_ida" name="hora_ida" required>
+                    <input type="time" id="Hora_del_servicio" name="Hora_del_servicio" required>
 
                 
                 </div>
@@ -164,7 +164,7 @@
                 <!-- Sección de Paradas  -->
                 <div id="seccion_paradas" style="display:none;">
                 
-                    <label for="paradas">Seccion de comentariós, paradas dirección exacta:</label> <span id="error-message-paradas" class="error-message"> </span>
+                    <label for="paradas">Seccion de comentariós, paradas dirección exacta:</label> 
                     <textarea id="paradas" name="paradas" rows="4"></textarea>
                 </div>
 
@@ -238,10 +238,10 @@
                     <textarea id="comentario_recepción de factura " name="comentario_recepción de factura " rows="4"></textarea>
 
 
-                    <h5></h5>
+                    <h5><span><a href="terminos_y_condiciones.html" onclick="abrirVentanaEmergente(event)">Favor de leer Términos y Condiciones</a></span></h5>
                     <h6>
 
-                        <span><a href="terminos_y_condiciones.html" onclick="abrirVentanaEmergente(event)">Términos y Condiciones</a></span>
+                        
                         <span><label for="aceptoCheckboxinicio">Acepto los términos y condiciones</label></span>
                         <span><input type="checkbox" id="aceptoCheckboxinicio"></span>
                     </h6>
