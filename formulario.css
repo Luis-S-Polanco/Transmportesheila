@@ -16,11 +16,11 @@ body {
 }
 
 .container {
-    max-width: 85%; /* Cambiado a un 60% del ancho de la página */
+    max-width: 60%; /* Cambiado a un 60% del ancho de la página */
     margin: 0px auto;
     padding: 30px;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 50px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
