@@ -6,7 +6,7 @@ body {
     font-size: 20px; /* Cambiado el tamaño de fuente general */
 }
 .error_{
-    color: rgb(255, 0, 0);
+    color: #ff0000;
     
 }
 .error-message {
@@ -16,12 +16,13 @@ body {
 }
 
 .container {
-    max-width: 60%; /* Cambiado a un 60% del ancho de la página */
+    max-width: 85%; 
     margin: 0px auto;
     padding: 30px;
     background-color: #fff;
-    border-radius: 50px;
+    border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Incluye el padding en el ancho total del contenedor */
 }
 
 
@@ -45,6 +46,9 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 20px; /* Cambiado el tamaño de fuente de campos */
+
+   
+
 }
 
 /* Estilos comunes para botones */
@@ -83,7 +87,6 @@ textarea {
 .button:hover .button-icon {
     transform: scale(1.2); /* Agrandar la imagen al hacer hover */
 }
-
 
 input[type="submit"] {
     background-color: #007BFF;
