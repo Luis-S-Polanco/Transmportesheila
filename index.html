@@ -22,21 +22,37 @@
                 <!-- Sección de Datos del Solicitante -->
             <div class="form-section">
                 
-                <label for="nombre_solicitante">Nombre  del solicitante :</label> <span id="error-message-nombre_solicitante" class="error-message"></span>
+                <label for="nombre_solicitante">Nombre  del solicitante:</label> 
+
+                <span id="aterisco" class="aterisco">*</span>
+
+                <span id="error-message-nombre_solicitante" class="error-message"></span>
                 <br>
+
                 <input type="text" id="nombre_solicitante" name="nombre_solicitante" required>
             </div>
 
 
             <!-- Contacto del solicitante -->  
 
-                <label for="contacto_solicitante">Contacto del solicitante:</label><span id="error-message-contacto_solicitante" class="error-message"> </span>
+                <label for="contacto_solicitante">Contacto del solicitante:</label>
+                
+                <span id="aterisco" class="aterisco">*</span>
+
+                
+                <span id="error-message-contacto_solicitante" class="error-message"> </span>
                 <br>
+
                 <input type="tel" id="contacto_solicitante" name="contacto_solicitante" required>
 
                 <!-- agregar al Jc esto -->
                   
-                <label for="correo_solicitante">Correo del solicitante:</label> <span id="error-message-correo_solicitante" class="error-message"></span>
+                <label for="correo_solicitante">Correo del solicitante:</label> 
+                
+                <span id="aterisco" class="aterisco">*</span>
+
+                
+                <span id="error-message-correo_solicitante" class="error-message"></span>
                 <br>
                 <input type="email" id="correo_solicitante" name="correo_solicitante" required>
 
@@ -44,7 +60,9 @@
                 <!-- Sección de Tipo de documento -->
             <div class="form-section">
                 
-                <label for="tipo_documento">Tipo de documento:</label><span id="error-message-tipo_documento" class="error-message"></span>
+                <label for="tipo_documento">Tipo de documento:</label> <span id="aterisco" class="aterisco">*</span>
+
+                <span id="error-message-tipo_documento" class="error-message"></span>
                 <select id="tipo_documento" name="tipo_documento" required>
                     <option value="vacio">Seleccione un tipo de documento </option>
                     <option value="RNC">RNC</option>
@@ -57,7 +75,10 @@
                 
                 <!-- Agregar Jc-->
                 
-                <label for="informacion_documento">  Redactar documento:</label><span id="error-message-informacion_documento" class="error-message"> </span>
+                <label for="informacion_documento">  Redactar documento:</label>  <span id="aterisco" class="aterisco">*</span>
+
+                
+                <span id="error-message-informacion_documento" class="error-message"> </span>
                 <br>
                 <input type="number" id="informacion_documento" name="informacion_documento" required>
 
@@ -76,11 +97,18 @@
                 <!-- la información de cada pasajero -->
                 
                 <div class="form-section">
-                    <label for="nombre_pasajero">Nombre del pasajero :</label> <span id="error-message-nombre_pasajero" class="error-message"> </span>
+                    <label for="nombre_pasajero">Nombre del pasajero :</label>  <span id="aterisco" class="aterisco">*</span>
+
+                    
+                    <span id="error-message-nombre_pasajero" class="error-message"> </span>
                     <br>
                     <input type="text" id="nombre_pasajero" name="nombre_pasajero" required>
 
-                    <label for="telefono_pasajero">Contacto  del  pasajero:</label><span id="error-message-telefono_pasajero" class="error-message"> </span>
+                    <label for="telefono_pasajero">Contacto  del  pasajero:</label> 
+                    <span id="aterisco" class="aterisco">*</span>
+    
+                    
+                    <span id="error-message-telefono_pasajero" class="error-message"> </span>
                     <br>
                     <input type="tel" id="telefono_pasajero" name="telefono_pasajero" required>
                 </div>
@@ -90,7 +118,10 @@
                     <label for="nombre_pasajero2">Nombre del representante:</label> 
                     <input type="text" id="nombre_pasajero2" name="nombre_pasajero2" required>
 
-                    <label for="telefono_pasajero2">Contacto del  representante:</label><span id="error-message-telefono_pasajero2" class="error-message"> </span>
+                    <label for="telefono_pasajero2">Contacto del  representante:</label>
+
+                    
+                    <span id="error-message-telefono_pasajero2" class="error-message"> </span>
                     <br>
                     <input type="tel2" id="telefono_pasajero2" name="telefono_pasajero2" required>
                 </div>
@@ -99,7 +130,10 @@
             <!-- Sección de Tipo de Servicio -->
                 <div class="form-section">
                     
-                    <label for="tipo_servicio">Tipo de servicio:</label><span id="error-message-tipo_servicio" class="error-message"></span>
+                    <label for="tipo_servicio">Tipo de servicio:</label>  <span id="aterisco" class="aterisco">*</span>
+
+                    
+                    <span id="error-message-tipo_servicio" class="error-message"></span>
                     <select id="tipo_servicio" name="tipo_servicio" required>
                         <option value="vacio">Seleccione un tipo de servicio </option>
                         <option value="ida_vuelta">Ida y vuelta (el mismo día)</option>
@@ -111,11 +145,17 @@
                 <!-- Sección de Fecha y Hora -->
                 <div class="form-section">
                    
-                    <label for="fecha_del_servicio"> Fecha del servicio :</label> <span id="error-message-fecha_del_servicio" class="error-message"> </span>
+                    <label for="fecha_del_servicio"> Fecha del servicio :</label> <span id="aterisco" class="aterisco">*</span>
+
+                    
+                    <span id="error-message-fecha_del_servicio" class="error-message"> </span>
                     <br>
                     <input type="date" id="fecha_del_servicio" name="fecha_del_servicio" required>
 
-                    <label for="Hora_del_servicio">Hora del servicio :</label><span id="error-message-Hora_del_servicio" class="error-message"> </span>
+                    <label for="Hora_del_servicio">Hora del servicio :</label> 
+                    <span id="aterisco" class="aterisco">*</span>
+    
+                    <span id="error-message-Hora_del_servicio" class="error-message"> </span>
                     <br>
                     <input type="time" id="Hora_del_servicio" name="Hora_del_servicio" required>
 
@@ -133,13 +173,20 @@
                 <!-- Sección de Dirección -->
                 <div class="form-section">
                    
-                    <label for="lugar_recogida">Lugar de recogida :</label> <span id="error-message-lugar_recogida" class="error-message"> </span>
+                    <label for="lugar_recogida">Lugar de recogida :</label>  <span id="aterisco" class="aterisco">*</span>
+
+                    
+                    <span id="error-message-lugar_recogida" class="error-message"> </span>
                     <br>
                     <input type="text" id="lugar_recogida" name="lugar_recogida" required>
                     <span id="error-message-lugar_recogida" class="error-message"> </span>
                     <br>
 
-                    <label for="lugar_destino">Lugar de destino :</label><span id="error-message-lugar_destino" class="error-message"> </span>
+                    <label for="lugar_destino">Lugar de destino :</label>
+                    <span id="aterisco" class="aterisco">*</span>
+    
+                    
+                    <span id="error-message-lugar_destino" class="error-message"> </span>
                     <br>
                     <input type="text" id="lugar_destino" name="lugar_destino" required>
                 </div>
@@ -147,7 +194,10 @@
                 <!-- Tiene parada  -->
                 <div class="form-section">
                     
-                    <label for="requiere_paradas">¿Requiere paradas?:</label>  <span id="error-message-requiere_paradas" class="error-message"> </span>
+                    <label for="requiere_paradas">¿Requiere paradas?:</label>  <span id="aterisco" class="aterisco">*</span>
+
+                    
+                    <span id="error-message-requiere_paradas" class="error-message"> </span>
                     <select id="requiere_paradas" name="requiere_paradas" required>
                         <option value="vacio">Seleccione si requiere alguna paradas </option>
                         <option value="si_parada">Si</option>
@@ -171,7 +221,10 @@
                 <!-- Sección de Cantidad -->
                 <div class="form-section">
                     
-                    <label for="cantidad_maletas">Cantidad de maletas:</label> <span id="error-message-cantidad_maletas" class="error-message"> </span>
+                    <label for="cantidad_maletas">Cantidad de maletas:</label>  <span id="aterisco" class="aterisco">*</span>
+
+                    
+                    <span id="error-message-cantidad_maletas" class="error-message"> </span>
                     <input type="number" id="cantidad_maletas" name="cantidad_maletas" required>
 
                     <label for="cantidad_buses">Cantidad de buses:</label>
@@ -191,7 +244,10 @@
                    
                    <!-- Sección de Datos del Pasajero -->
 
-                        <label for="cantidad_pasajeros">Cantidad de pasajeros  :</label>  <span id="error-message-cantidad_pasajeros" class="error-message"> </span>
+                        <label for="cantidad_pasajeros">Cantidad de pasajeros  :</label>  <span id="aterisco" class="aterisco">*</span>
+
+                        
+                        <span id="error-message-cantidad_pasajeros" class="error-message"> </span>
                             <br>
                          <input type="number" id="cantidad_pasajeros" name="cantidad_pasajeros" required>
             
@@ -205,7 +261,10 @@
                         <!-- Sección de Método de Pago -->
                         <div class="form-section">
                                      
-                            <label for="metodo_pago">Método de pago que desea utilizar:</label> <span id="error-message-metodo_pago" class="error-message"></span>
+                            <label for="metodo_pago">Método de pago que desea utilizar:</label>  <span id="aterisco" class="aterisco">*</span>
+
+                            
+                            <span id="error-message-metodo_pago" class="error-message"></span>
                             <select id="metodo_pago" name="metodo_pago" required>
                                 <option value="vacio">Seleccione un método de pago</option>
                                 <option value="Depósito y/o Transferencia">Depósito y/o transferencia</option>
@@ -215,15 +274,33 @@
                         </div>
 
                         <!-- Sección de Método de comprobante  -->
-                            <!-- falta el codigo de js  -->
+                          
+
+                            <!-- falta el codigo de js  actualizar 02/02/2024 -->
+                            <div class="form-section">
+                                                                            
+                                <label for="tipo_facturación"> Tipo de facturación :</label>  <span id="aterisco" class="aterisco">*</span>
+
+                                
+                                <span id="error-message-tipo_facturación" class="error-message"></span>
+                                <select id="tipo_facturación" name="tipo_facturación" required>
+                                    <option value="vacio">Seleccione un tipo de tipo facturación</option>
+                                    <option value="Crédito Fiscal">Crédito Fiscal </option>
+                                    <option value=" Consumidor final">  Consumidor final </option>
+                                    <option value="Régimen especial">Régimen especial</option>
+                                    <option value="Gubernamental">Gubernamental</option>
+                                </select>
+                            </div>
 
 
-
-                        <!-- Sección de Recepción de factura   -->
-                            <!-- falta el codigo de js  -->
+                    
+                            <!-- falta el codigo de js  actualizar 02/02/2024 -->
                             <div class="form-section">
                                                 
-                                <label for="recepción_factura">Recepción de factura  :</label> <span id="error-message-recepción_factura" class="error-message"></span>
+                                <label for="recepción_factura">Recepción de factura  :</label>  <span id="aterisco" class="aterisco">*</span>
+
+                                
+                                <span id="error-message-recepción_factura" class="error-message"></span>
                                 <select id="recepción_factura" name="recepción_factura" required>
                                     <option value="vacio">Seleccione un tipo de recepción de factura</option>
                                     <option value="Correo electrónico">Correo electrónico </option>
@@ -233,9 +310,9 @@
                             </div>
 
 
-
-                    <label for="comentario_recepción de factura "> Recepción de factura  comentario   </label>
-                    <textarea id="comentario_recepción de factura " name="comentario_recepción de factura " rows="4"></textarea>
+                        <!-- Actualiza codigo de Jc Css  02/02/2024 -->
+                    <label for="comentario_general "> Comentarios   </label>
+                    <textarea id="comentario_general " name="comentario_general" rows="4"></textarea>
 
 
                     <h5><span><a href="terminos_y_condiciones.html" onclick="abrirVentanaEmergente(event)">Favor de leer Términos y Condiciones</a></span></h5>
@@ -265,6 +342,11 @@
         
 
     <script src="formulario.js"></script>
+
+    
+</body>
+
+</html>
 
     
 </body>
