@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    max-width: 60%; /* Cambiado a un 60% del ancho de la página */
+    max-width: 85%; /* Cambiado a un 60% del ancho de la página */
     margin: 0px auto;
     padding: 30px;
     background-color: #fff;
