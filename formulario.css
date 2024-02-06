@@ -56,6 +56,10 @@ textarea {
     padding: 10px 20px;
     margin: 0 10px;
     border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.3s ease;
+
 }
 
 .button:hover {
@@ -69,7 +73,16 @@ textarea {
 .button#enviar-whatsapp:hover {
     background-color: #128c7e;
 }
+.button-icon {
+    width: 24px; /* Ancho deseado de la imagen */
+    height: auto; /* Altura automática para mantener la proporción */
+    margin-right: 10px; /* Espacio entre la imagen y el texto del botón */
+}
 
+/* Animación para agrandar y hacer pequeña la imagen al hacer hover en el botón */
+.button:hover .button-icon {
+    transform: scale(1.2); /* Agrandar la imagen al hacer hover */
+}
 
 
 input[type="submit"] {
